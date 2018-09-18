@@ -3,7 +3,7 @@ fetch('https://api.spacexdata.com/v2/launches/next')
     return response.json();
 })
 .then((json) => {
-    let nextLaunch = document.getElementById("demo").innerHTML = json.launch_date_local
+    let nextLaunch = json.launch_date_local
 
     let deadline = new Date(nextLaunch).getTime();
     let x = setInterval(function() {
